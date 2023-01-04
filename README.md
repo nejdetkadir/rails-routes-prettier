@@ -27,7 +27,28 @@ gem install rails-routes-prettier
 
 ## Usage
 
-TODO: Write usage instructions here
+To view the routes in your application, you can use the following code:
+
+```ruby
+Rails::Routes::Prettier.all
+# => [#<Route name: 'root', verb: 'GET', path: '/', controller: 'SwaggerController', action: 'index' req_options: {}>, ...]
+```
+
+This will display all of the routes in your application in a clean and readable format. You can also search for routes by certain fields using the following methods:
+
+- `find_by_name`: Searches for routes by name.
+- `find_by_verb`: Searches for routes by HTTP verb.
+- `find_by_path`: Searches for routes by path.
+- `find_by_req_options`: Searches for routes by requirements options.
+- `find_by_controller`: Searches for routes by controller.
+- `find_by_action`: Searches for routes by action.
+
+For example, you can search for a route with the verb `GET` by using the following code:
+
+```ruby
+Rails::Routes::Prettier.find_by_verb('GET')
+# => [#<Route name: 'root', verb: 'GET', path: '/', controller: 'SwaggerController', action: 'index' req_options: {}>, ...]
+```
 
 ## Development
 
